@@ -1,0 +1,161 @@
+<!doctype html>
+<html>
+<head>
+
+<title>photo gallery </title>
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+</head>
+<style>
+
+
+@keyframes fadeout
+{
+from{transform:scale(3)}
+to{transform:scale(1)}
+}
+
+header
+{
+color:white
+}
+
+body
+{
+background:black;
+text-align:center;
+}
+
+.pic1
+{
+width:60%;
+margin:60px;
+box-shadow:0px 10px 30px cyan;
+transition:0.50s;
+animation:zoomout 1s;
+}
+  
+/*   Media Query  */
+
+ /* Extra small devices (phones, 600px and down) */
+
+@media only screen and (max-width: 600px)
+ {
+
+  body{}
+  header{
+	      //display:none;
+		font-size:10px;
+    	}
+          
+
+		.pic
+			{
+			width:100%;
+			margin:10px;
+			border-radius:0px;
+			}
+
+
+
+	
+
+}
+
+/*  Small devices (portrait tablets and large phones, 600px and up)  */
+
+@media only screen and (min-width: 600px) 
+{
+  body{text-align:center;}
+header{
+  font-size:20px;
+  margin-bottom:20px;
+   }
+		
+	
+
+                   .pic
+			{
+			width:40%;
+			margin:10px;
+			border-radius:0px;
+			}
+
+
+
+
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+
+
+@media only screen and (min-width: 768px)
+ {
+  body{}
+
+}
+
+
+/* Large devices (laptops/desktops, 992px and up) */
+
+@media only screen and (min-width: 992px)
+ {
+  body{}
+    
+                    .pic
+			{
+			width:30%;
+			margin:10px;
+			border-radius:0px;
+			}
+
+
+
+}
+
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+
+@media only screen and (min-width: 1200px)
+ {
+  body{}
+  header
+	{
+	 font-size:40px;
+	}
+
+		.pic
+		{
+			width:15%;
+			height:200px;
+			margin:60px;
+			border-radius:120px;
+			box-shadow:0px 10px 30px cyan;
+			transition:0.50s;
+		}
+
+
+} 
+
+
+
+
+</style>
+
+<body>
+<header>
+<a href="photogallery.html">
+<img src="images/close1.png" style="width:3%">
+</a>
+
+</header>
+
+<body>
+<img src="images/pg4.jpg" class="pic1">
+</body>
+
+
+
+
+</html>
