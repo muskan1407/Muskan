@@ -1,53 +1,56 @@
 <!doctype html>
 <html>
-<head><title>practice page</title>
-<h1>
-<font color="pink" face="akira expanded" >
-Practice Page
-</font>
-</h1>
+<head><title></title>
+<header>
+<h1>Practice Page</h1>
+<h2><a href="Index.html">Profile Page</a></h2>
+</header>
 </head>
+<nav>
+
+<ul style="list-style:none;">
+<div id="col1">
+<li><a href="index.html">home</a></li>
+</div>
+<div id="col1">
+<li><a href="PhotoGallery.html">Photo Gallery</a> (Nature)</li>
+</div>
+<div id="col1">
+<li><a href="Menu.html">Menu</a></li>
+</div>
+<div id="col1">
+<li><a href="#">Contact</a></li>
+</div>
+</ul>
+</nav>
 
 <style>
-
-
-
-nav a:link
+#col1
 {
-padding:20px;
-color:blue;
-text-decoration:none;
+background:#ff9900;
+width:20%;
+padding:80px;
+text-align:center;
+font-size:30px;
+margin:center;
+border:0.1px white solid;
+transition:0.5s;
+
+}
+#col1:hover
+{
+transform:scale(1);
+border-radius:8px;
+width:30%;
 }
 
-nav a:visited
+body
 {
-color:#5f6a6a;
+//filter: opacity(80%);
+//background:black;
 }
-
-nav a:hover
-{
-color:#3498db ;
-text-decoration:underline;
-}
-
 </style>
-
 <body>
-<nav>
-<a href="index.html">HOME</a>
-<br/>
-<br/>
-
-<a href="photogallery.html">PHOTO GALLERY</a>
-  <br/>
-  <br/>
-  <a href="List.html">LIST</a>
-   <br/>
-  <br/>
-  <a href="menu.html">MENU</a>
-<br/>
-<br/>
-</nav>
 
 </body>
 </html>
