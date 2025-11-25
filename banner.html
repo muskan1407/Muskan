@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Carousel – Hold 3 Seconds</title>
+<title>Perfect 3-Sec Hold Carousel</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
@@ -22,16 +22,22 @@ body {
     overflow: hidden;
     border-radius: 20px;
     box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+    position: relative;
 }
 
 .slides {
     display: flex;
-    width: 300%;
     height: 100%;
     transition: transform 0.8s ease-in-out;
 }
 
-.slides img {
+.slide {
+    width: 100%;          /* One image per slide */
+    height: 100%;
+    flex-shrink: 0;       /* Prevent shrinking */
+}
+
+.slide img {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -44,11 +50,9 @@ body {
 
 <div class="carousel">
     <div class="slides" id="slider">
-     <img src="images/jpg1.jpg">
-<img src="images/jpg2.jpg">
-<img src="images/jpg3.jpg">
-<img src="images/jpg4.jpg">
-
+        <div class="slide"><img src="jpg1.jpg"></div>
+        <div class="slide"><img src="jpg2.jpg"></div>
+        <div class="slide"><img src="jpg3.jpg"></div>
     </div>
 </div>
 
@@ -56,23 +60,25 @@ body {
 
 let index = 0;
 const slider = document.getElementById("slider");
-const total = slider.children.length;
+const slides = document.querySelectorAll(".slide");
+const total = slides.length;
 
-// Run this function every 3 seconds
 setInterval(() => {
-    slider.style.transform = `translateX(-${index * 100}%)`;
     index++;
 
-    // Reset when last slide ends
-    if (index === total) {
+    if (index >= total) {
         index = 0;
     }
-}, 3000);
+
+    slider.style.transform = `translateX(-${index * 100}%)`;
+
+}, 3000);  // HOLD 3 SECONDS
 
 </script>
 
 </body>
 </html>
+
 
 
 
