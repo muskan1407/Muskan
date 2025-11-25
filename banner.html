@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Carousel Banner – 3 Sec Hold</title>
+<title>Half Screen Carousel – 3 Sec Hold</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
@@ -9,61 +9,58 @@
 body {
     margin: 0;
     padding: 0;
-    overflow: hidden;
-    background: #000;
+    background: #FDF3FF; /* Light pastel background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
 
-/* Carousel */
+/* Carousel wrapper (half screen height) */
 .carousel {
-    width: 100%;
-    height: 100vh;
+    width: 90%;
+    height: 50vh;   /* 🔥 HALF screen */
     overflow: hidden;
     position: relative;
+    border-radius: 15px;
+    box-shadow: 0px 5px 20px rgba(0,0,0,0.2);
 }
 
-/* Container */
+/* Slide container */
 .slides {
     display: flex;
-    width: 400%;
+    width: 400%;  
     height: 100%;
-    animation: slide 14s infinite;
+    animation: slide 16s infinite; /* 4 slides × 4 sec */
 }
 
 /* Images */
 .slides img {
     width: 100%;
-    height: 100vh;
+    height: 50vh;   /* Half screen height */
     object-fit: cover;
+    border-radius: 15px;
 }
 
-/* --- KEYFRAMES FOR 3 SEC HOLD --- */
-
-/*
-Slide time map:
-0–3s   -> Slide 1 HOLD
-3–3.5s -> Slide moves to 2
-3.5–6.5s -> Slide 2 HOLD
-6.5–7s -> Slide moves to 3
-7–10s -> Slide 3 HOLD
-10–10.5s -> Slide moves to 4
-10.5–13.5s -> Slide 4 HOLD
-*/
-
+/* KEYFRAME (3 sec hold + 1 sec slide) */
 @keyframes slide {
-    0% { transform: translateX(0%); }
-    21% { transform: translateX(0%); } /* 3 sec hold */
 
-    25% { transform: translateX(-100%); } /* move */
+    0%     { transform: translateX(0%); }
+    18.75% { transform: translateX(0%); }  
 
-    46% { transform: translateX(-100%); } /* 3 sec hold */
+    25%    { transform: translateX(-100%); }  
 
-    50% { transform: translateX(-200%); } /* move */
+    43.75% { transform: translateX(-100%); } 
 
-    71% { transform: translateX(-200%); } /* 3 sec hold */
+    50%    { transform: translateX(-200%); } 
 
-    75% { transform: translateX(-300%); } /* move */
+    68.75% { transform: translateX(-200%); } 
 
-    100% { transform: translateX(-300%); } /* 3 sec hold */
+    75%    { transform: translateX(-300%); } 
+
+    93.75% { transform: translateX(-300%); }  
+
+    100%   { transform: translateX(0%); } 
 }
 
 </style>
@@ -74,13 +71,14 @@ Slide time map:
 <div class="carousel">
     <div class="slides">
        <img src="images/jpg1.jpg">
-       <img src="images/jpg2.jpg">
-        <img src="images/jpg3.jpg">
-        <img src="images/jpg4.jpg">
+<img src="images/jpg2.jpg">
+<img src="images/jpg3.jpg">
+<img src="images/jpg4.jpg">
 
     </div>
 </div>
 
 </body>
 </html>
+
 
