@@ -1,72 +1,102 @@
 <!doctype html>
 <html>
-<head><title></title>
-<header>
-<h1>Practice Page</h1>
 
-</header>
+<head>
+<title>Practice Page</title>
+
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Poppins, sans-serif;
+}
+
+/* WHITE BACKGROUND */
+body{
+    background:white;
+    padding:40px 0;
+}
+
+/* HEADER */
+header h1{
+    text-align:center;
+    font-size:45px;
+    color:#b8006b;
+    margin-bottom:25px;
+    letter-spacing:1px;
+}
+
+/* NAVIGATION GRID */
+nav ul{
+    list-style:none;
+    width:80%;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(250px, 1fr));
+    gap:25px;
+}
+
+/* BOX STYLE */
+nav li{
+    background:#fff7fc;
+    border:2px solid #ffd6e9;
+    padding:40px 15px;
+    font-size:22px;
+    text-align:center;
+    border-radius:12px;
+    transition:0.4s ease;
+    box-shadow:0 4px 12px rgba(0,0,0,0.08);
+}
+
+nav li:hover{
+    transform:translateY(-8px);
+    background:#ffe6f3;
+    box-shadow:0 8px 18px rgba(0,0,0,0.15);
+}
+
+/* LINK STYLE */
+nav a{
+    text-decoration:none;
+    color:#b8006b;
+    font-weight:600;
+    transition:0.3s;
+}
+
+nav a:hover{
+    color:#ff4fa3;
+}
+
+</style>
+
 </head>
-<nav>
 
-<ul style="list-style:none;">
-<div id="col1">
-<li><a href="index.html">Home</a></li>
-</div>
-  <div id="col1">
-<li><a href="Login.html">Login Page</a> </li>
-  </div>
-  <div id="col1">
-<li><a href="Form.html">Registration Form</a> </li>
-  </div>
-  <div id="col1">
-<li><a href="Animation.html">Animation</a> </li>
-</div>
-   <div id="col1">
-<li><a href="Overlay.html">Overlay</a> </li>
-</div>
-  <div id="col1">
-<li><a href="menu.html">Menu</a></li>
-</div>
-<div id="col1">
-<li><a href="photogallery.html">Photo Gallery</a> </li>
-</div>
-<div id="col1">
-<li><a href="List.html">List</a> </li>
-</div>
- 
+<body>
+
+<header>
+    <h1>Practice Page</h1>
+</header>
+
+<nav>
+<ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="Login.html">Login Page</a></li>
+    <li><a href="Form.html">Registration Form</a></li>
+    <li><a href="Animation.html">Animation</a></li>
+    <li><a href="Overlay.html">Overlay</a></li>
+    <li><a href="menu.html">Menu</a></li>
+    <li><a href="photogallery.html">Photo Gallery</a></li>
+    <li><a href="List.html">List</a></li>
 </ul>
 </nav>
 
-<style>
-#col1
-{
-background:#FFF9BD;
-width:20%;
-padding:50px;
-text-align:center;
-font-size:30px;
-margin:auto;
-border:0.1px white solid;
-transition:0.5s;
-
-}
-#col1:hover
-{
-transform:scale(1);
-border-radius:8px;
-width:30%;
-}
-
-body
-{
-//filter: opacity(80%);
-//background:#EBD6FB;
-}
-</style>
-<body>
-
 </body>
 </html>
+
 
 
 
