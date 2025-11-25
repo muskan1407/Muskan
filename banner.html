@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Half Screen Carousel – 3 Sec Hold</title>
+<title>Carousel – Perfect 3 Sec Hold</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
@@ -9,58 +9,34 @@
 body {
     margin: 0;
     padding: 0;
-    background: #FDF3FF; /* Light pastel background */
+    background: #FFEFF9; /* Light pastel background */
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
 }
 
-/* Carousel wrapper (half screen height) */
+/* Half-screen carousel */
 .carousel {
     width: 90%;
-    height: 50vh;   /* 🔥 HALF screen */
+    height: 50vh;
     overflow: hidden;
-    position: relative;
     border-radius: 15px;
     box-shadow: 0px 5px 20px rgba(0,0,0,0.2);
+    position: relative;
 }
 
-/* Slide container */
 .slides {
     display: flex;
-    width: 400%;  
+    width: 100%;
     height: 100%;
-    animation: slide 16s infinite; /* 4 slides × 4 sec */
+    transition: transform 0.8s ease-in-out; /* Smooth slide */
 }
 
-/* Images */
 .slides img {
     width: 100%;
-    height: 50vh;   /* Half screen height */
+    height: 100%;
     object-fit: cover;
-    border-radius: 15px;
-}
-
-/* KEYFRAME (3 sec hold + 1 sec slide) */
-@keyframes slide {
-
-    0%     { transform: translateX(0%); }
-    18.75% { transform: translateX(0%); }  
-
-    25%    { transform: translateX(-100%); }  
-
-    43.75% { transform: translateX(-100%); } 
-
-    50%    { transform: translateX(-200%); } 
-
-    68.75% { transform: translateX(-200%); } 
-
-    75%    { transform: translateX(-300%); } 
-
-    93.75% { transform: translateX(-300%); }  
-
-    100%   { transform: translateX(0%); } 
 }
 
 </style>
@@ -69,8 +45,8 @@ body {
 <body>
 
 <div class="carousel">
-    <div class="slides">
-       <img src="images/jpg1.jpg">
+    <div class="slides" id="slider">
+      <img src="images/jpg1.jpg">
 <img src="images/jpg2.jpg">
 <img src="images/jpg3.jpg">
 <img src="images/jpg4.jpg">
@@ -78,7 +54,23 @@ body {
     </div>
 </div>
 
+<script>
+let index = 0;
+const slides = document.getElementById("slider");
+const totalSlides = 4; // change if more images
+
+function moveSlide() {
+    index++;
+    if (index === totalSlides) index = 0;  // loop back
+    slides.style.transform = `translateX(-${index * 100}%)`;
+}
+
+// Hold for 3 seconds on every image
+setInterval(moveSlide, 3000); 
+</script>
+
 </body>
 </html>
+
 
 
