@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Carousel – Hold on Each Slide</title>
+<title>Carousel – Hold 3 Seconds</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
@@ -22,12 +22,11 @@ body {
     overflow: hidden;
     border-radius: 20px;
     box-shadow: 0 5px 20px rgba(0,0,0,0.2);
-    position: relative;
 }
 
 .slides {
     display: flex;
-    width: 300%; /* 3 images */
+    width: 300%;
     height: 100%;
     transition: transform 0.8s ease-in-out;
 }
@@ -45,7 +44,7 @@ body {
 
 <div class="carousel">
     <div class="slides" id="slider">
-  <img src="images/jpg1.jpg">
+     <img src="images/jpg1.jpg">
 <img src="images/jpg2.jpg">
 <img src="images/jpg3.jpg">
 <img src="images/jpg4.jpg">
@@ -55,26 +54,26 @@ body {
 
 <script>
 
-// --- AUTO SLIDE + HOLD ---
 let index = 0;
 const slider = document.getElementById("slider");
 const total = slider.children.length;
 
-function changeSlide() {
+// Run this function every 3 seconds
+setInterval(() => {
     slider.style.transform = `translateX(-${index * 100}%)`;
-    index = (index + 1) % total;
-}
+    index++;
 
-// First slide shows immediately, then hold 3 seconds
-setTimeout(() => {
-    changeSlide();
-    setInterval(changeSlide, 3000); // every slide holds 3 seconds
+    // Reset when last slide ends
+    if (index === total) {
+        index = 0;
+    }
 }, 3000);
 
 </script>
 
 </body>
 </html>
+
 
 
 
