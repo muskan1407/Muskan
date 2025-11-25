@@ -3,66 +3,62 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Muskan</title>
+<title>Flowers Animation</title>
 
 <style>
 
-/* ---- Background ---- */
 body{
-    margin: 0;
-    padding: 0;
-    height: 100vh;
-    background: url('https://i.pinimg.com/736x/d5/4a/fc/d54afc4b014e6c6b7966a7e3e9b1c0f2.jpg') no-repeat center center/cover;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    margin:0;
+    padding:0;
+    overflow:hidden;
+    height:100vh;
+    background: url('https://i.pinimg.com/736x/d5/4a/fc/d54afc4b014e6c6b7966a7e3e9b1c0f2.jpg') 
+    no-repeat center center/cover;
     font-family: "Poppins", sans-serif;
 }
 
-/* ---- Glow Animation ---- */
-@keyframes fadeIn {
-    0% { opacity: 0; transform: translateY(30px); }
-    100% { opacity: 1; transform: translateY(0); }
+/* Floating Animation */
+@keyframes floatUp {
+    0% { transform: translateY(100vh) scale(0.5); opacity: 0; }
+    50% { opacity: 1; }
+    100% { transform: translateY(-20vh) scale(1); opacity: 0; }
 }
 
-@keyframes glow {
-    0% { text-shadow: 0 0 5px #ffb5e8, 0 0 10px #ffb5e8; }
-    50% { text-shadow: 0 0 15px #ff7bd3, 0 0 25px #ff7bd3; }
-    100% { text-shadow: 0 0 5px #ffb5e8, 0 0 10px #ffb5e8; }
-}
-
-/* ---- Main Name Text ---- */
-#muskan{
-    font-size: 90px;
-    font-weight: 700;
-    color: white;
-    text-align: center;
-    letter-spacing: 5px;
-    animation: fadeIn 2s ease-out, glow 3s ease-in-out infinite;
-}
-
-/* ---- Small Tagline ---- */
-#tagline{
-    margin-top: 10px;
-    font-size: 20px;
-    color: #fff;
+.flower {
+    position: absolute;
+    font-size: 40px;
+    animation: floatUp linear infinite;
     opacity: 0;
-    animation: fadeIn 3s ease-out forwards;
-    animation-delay: 1.2s;
-    text-align: center;
 }
 
+/* Random flower placement */
 </style>
-</head>
 
+</head>
 <body>
 
-<div>
-    <div id="muskan">Muskan</div>
-    <div id="tagline">Elegance • Soft Glow • Minimal Vibes ✨</div>
-</div>
+<script>
+// Many flower emojis
+const flowers = ["🌸","🌷","🌺","💮","🌼","🌻","💐","🪷"];
+
+// Create 40 floating flowers
+for(let i=0; i<40; i++){
+    let f = document.createElement("div");
+    f.className = "flower";
+    f.innerHTML = flowers[Math.floor(Math.random()*flowers.length)];
+
+    // Random position and animation speed
+    f.style.left = Math.random()*100 + "vw";
+    f.style.animationDuration = (5 + Math.random()*8) + "s";
+    f.style.animationDelay = Math.random()*5 + "s";
+
+    document.body.appendChild(f);
+}
+</script>
 
 </body>
 </html>
+
+
 
 
