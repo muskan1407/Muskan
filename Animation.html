@@ -1,82 +1,55 @@
 <!doctype html>
-<html>
+<html lang="en">
 <head>
-<title>Muskan | Intro</title>
-
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Muskan</title>
 
 <style>
 
-/* -------- Background Image (from your Pinterest link) -------- */
-body {
+/* ---- Background ---- */
+body{
     margin: 0;
     padding: 0;
-    background-image: url('https://i.pinimg.com/736x/10/bb/10/10bb10ca8b2c5bd2a25d00a4ae341f6e.jpg');
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    font-family: Poppins, sans-serif;
-    overflow: hidden;
+    height: 100vh;
+    background: url('https://i.pinimg.com/736x/d5/4a/fc/d54afc4b014e6c6b7966a7e3e9b1c0f2.jpg') no-repeat center center/cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Poppins", sans-serif;
 }
 
-/* -------- Fade-in Animation -------- */
+/* ---- Glow Animation ---- */
 @keyframes fadeIn {
-    from {opacity: 0; transform: translateY(40px);}
-    to   {opacity: 1; transform: translateY(0);}
+    0% { opacity: 0; transform: translateY(30px); }
+    100% { opacity: 1; transform: translateY(0); }
 }
 
-/* -------- Floating Animation -------- */
-@keyframes float {
-    0% { transform: translateY(0); }
-    50% { transform: translateY(-25px); }
-    100% { transform: translateY(0); }
+@keyframes glow {
+    0% { text-shadow: 0 0 5px #ffb5e8, 0 0 10px #ffb5e8; }
+    50% { text-shadow: 0 0 15px #ff7bd3, 0 0 25px #ff7bd3; }
+    100% { text-shadow: 0 0 5px #ffb5e8, 0 0 10px #ffb5e8; }
 }
 
-/* -------- Name Styling -------- */
-#logo {
-    text-align: center;
-    margin-top: 20%;
+/* ---- Main Name Text ---- */
+#muskan{
     font-size: 90px;
     font-weight: 700;
     color: white;
-    text-shadow: 0 0 20px rgba(255,255,255,0.7);
-    animation: fadeIn 2.5s ease-out;
+    text-align: center;
+    letter-spacing: 5px;
+    animation: fadeIn 2s ease-out, glow 3s ease-in-out infinite;
 }
 
-/* -------- Floating Emojis -------- */
-.flower {
-    font-size: 80px;
-    position: absolute;
-    animation: float 4s ease-in-out infinite;
-    opacity: 0.85;
-}
-
-/* top-left */
-#flower1 {
-    top: 50px;
-    left: 40px;
-    animation-duration: 5s;
-}
-
-/* top-right */
-#flower2 {
-    top: 120px;
-    right: 40px;
-    animation-duration: 6.5s;
-}
-
-/* bottom-left */
-#flower3 {
-    bottom: 80px;
-    left: 60px;
-    animation-duration: 7s;
-}
-
-/* bottom-right */
-#flower4 {
-    bottom: 60px;
-    right: 70px;
-    animation-duration: 5.5s;
+/* ---- Small Tagline ---- */
+#tagline{
+    margin-top: 10px;
+    font-size: 20px;
+    color: #fff;
+    opacity: 0;
+    animation: fadeIn 3s ease-out forwards;
+    animation-delay: 1.2s;
+    text-align: center;
 }
 
 </style>
@@ -84,12 +57,12 @@ body {
 
 <body>
 
-<div id="logo">Muskan</div>
-
-<div id="flower1" class="flower">🌸</div>
-<div id="flower2" class="flower">🌺</div>
-<div id="flower3" class="flower">🌷</div>
-<div id="flower4" class="flower">🌼</div>
+<div>
+    <div id="muskan">Muskan</div>
+    <div id="tagline">Elegance • Soft Glow • Minimal Vibes ✨</div>
+</div>
 
 </body>
 </html>
+
+
