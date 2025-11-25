@@ -1,72 +1,95 @@
 <!doctype html>
 <html>
-<head><title></title>
+<head>
+<title>Muskan | Intro</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<header>
-</header>
-</head>
-
 <style>
 
-@keyframes blink
-{
-from{opacity:1;}
-to{opacity:0;}
+/* -------- Background Image (from your Pinterest link) -------- */
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url('https://i.pinimg.com/736x/10/bb/10/10bb10ca8b2c5bd2a25d00a4ae341f6e.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    font-family: Poppins, sans-serif;
+    overflow: hidden;
 }
 
-@keyframes move
-{
-from{left:100%;}
-to{left:-250px;}
+/* -------- Fade-in Animation -------- */
+@keyframes fadeIn {
+    from {opacity: 0; transform: translateY(40px);}
+    to   {opacity: 1; transform: translateY(0);}
 }
 
-#logo
-{
-margin:40px;
-font-size:100px;
-opacity:1;
-animation:blink 3s infinite;
-text-align: center;
+/* -------- Floating Animation -------- */
+@keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-25px); }
+    100% { transform: translateY(0); }
 }
 
-#logo1
-{
-margin:40px;
-font-size:100px;
-position:absolute;
-animation:move 14s ease-in-out infinite;
+/* -------- Name Styling -------- */
+#logo {
+    text-align: center;
+    margin-top: 20%;
+    font-size: 90px;
+    font-weight: 700;
+    color: white;
+    text-shadow: 0 0 20px rgba(255,255,255,0.7);
+    animation: fadeIn 2.5s ease-out;
 }
 
-#logo2
-{
-margin:40px;
-font-size:100px;
-position:absolute;
-top:400px;
-animation:move 9s ease-in-out infinite alternate;
+/* -------- Floating Emojis -------- */
+.flower {
+    font-size: 80px;
+    position: absolute;
+    animation: float 4s ease-in-out infinite;
+    opacity: 0.85;
 }
 
-body
-{background:#FFF9BD;}
+/* top-left */
+#flower1 {
+    top: 50px;
+    left: 40px;
+    animation-duration: 5s;
+}
+
+/* top-right */
+#flower2 {
+    top: 120px;
+    right: 40px;
+    animation-duration: 6.5s;
+}
+
+/* bottom-left */
+#flower3 {
+    bottom: 80px;
+    left: 60px;
+    animation-duration: 7s;
+}
+
+/* bottom-right */
+#flower4 {
+    bottom: 60px;
+    right: 70px;
+    animation-duration: 5.5s;
+}
 
 </style>
+</head>
 
 <body>
 
-<div id="logo">
-Muskan
-</div>
+<div id="logo">Muskan</div>
 
-<div id="logo1">
-&#127804;
-</div>
-
-<div id="logo2">
-&#127803;
-</div>
+<div id="flower1" class="flower">🌸</div>
+<div id="flower2" class="flower">🌺</div>
+<div id="flower3" class="flower">🌷</div>
+<div id="flower4" class="flower">🌼</div>
 
 </body>
-
 </html>
